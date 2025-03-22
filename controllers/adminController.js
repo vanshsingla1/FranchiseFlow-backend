@@ -35,7 +35,7 @@ async function doApproveApplications(req,resp)
 async function doDeclineApplications(req,resp)
 {
     try {
-        let response = await UserApplyDetails.updateOne({email : req.body.emailid},{$set : {status : -1}});
+        let response = await UserApplyDetails.updateOne({email : req.body.email},{$set : {status : -1}});
         if(response.modifiedCount > 0)
             resp.send("Status Updated Successfully");
         else
